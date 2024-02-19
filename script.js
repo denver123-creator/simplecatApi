@@ -5,7 +5,9 @@
     const loadingScreen = document.getElementById('loading-screen');
 
 
+
     async function fetchData() {
+        // Simulate a delay to show the loading screen
         await new Promise(resolve => setTimeout(resolve, 1000));
     
         const url = 'https://cat-fact.herokuapp.com/facts';
@@ -31,15 +33,15 @@
     function toggleData() {
         if (isDataVisible) {
             b.innerHTML = "SHOW ITEMS"
-            xb.innerHTML = ""; 
+            xb.innerHTML = ""; // Clear content if data is visible
            
         } else {
             b.innerHTML = "HIDE ITEMS"
-            fetchData(); 
+            fetchData(); // Fetch and display data
             showLoading();
         }
 
-        isDataVisible = !isDataVisible;
+        isDataVisible = !isDataVisible; // Toggle the state
     }
 
     
